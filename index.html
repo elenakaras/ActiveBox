@@ -3,17 +3,32 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/style.css">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="описание страницы">
+  <meta name="keywords" content="описание страницы">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Open+Sans:wght@700&family=Raleway:wght@300;400;600;700&display=swap">
-  <link rel="stylesheet" href="styles/hamburgers.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+  <link rel="manifest" href="images/favicons/site.webmanifest">
+  <link rel="mask-icon" href="images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+
   <title>ActiveBox</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -43,27 +58,21 @@
   </svg>
 
   <!-- Header -->
-  <header class="header">
+  <header class="header" id="header">
     <div class="container">
       <div class="header__inner">
         <div class="header__logo">
           <img src="images/activebox-logo.png" alt="">
         </div>
-        <nav class="nav">
-          <a class="nav__link" href="#">FEATURES</a>
-          <a class="nav__link" href="#">WORKS</a>
-          <a class="nav__link" href="#">OUR TEAM</a>
-          <a class="nav__link" href="#">TESTIMONIALS</a>
-          <a class="nav__link" href="#">DOWNLOAD</a>
+        <nav class="nav" id="nav">
+          <a class="nav__link" href="#" data-scroll="#features">FEATURES</a>
+          <a class="nav__link" href="#" data-scroll="#works">WORKS</a>
+          <a class="nav__link" href="#" data-scroll="#team">OUR TEAM</a>
+          <a class="nav__link" href="#" data-scroll="#testimonials">TESTIMONIALS</a>
+          <a class="nav__link" href="#" data-scroll="#download">DOWNLOAD</a>
         </nav>
 
-        <!-- <div class="hamburger hamburger--squeeze is-active">
-          <div class="hamburger-box">
-            <div class="hamburger-inner"></div>
-          </div>
-        </div> -->
-
-        <button class="burger" type="button">
+        <button class="burger" type="button" id="navToogle">
           <span class="burger__item">Menu</span>
         </button>
 
@@ -72,7 +81,7 @@
   </header>
 
   <!-- Intro -->
-  <div class="intro">
+  <div class="intro" id="intro">
     <div class="container">
       <div class="intro__inner">
         <h1 class="intro__title">Your Favorite One Page Multi Purpose Template</h1>
@@ -85,7 +94,7 @@
 
   <!-- Features -->
   <div class="container">
-    <div class="features">
+    <div class="features" id="features">
       <div class="features__item">
         <img class="features__icon" src="./images/features/feature-1.png" alt="">
         <h4 class="features__title">Easily Customised</h4>
@@ -126,7 +135,7 @@
     </div> <!-- /.features -->
   </div> <!-- /.container -->
 
-  <div class="works">
+  <div class="works" id="works">
     <div class="works__item">
       <img class="works__photo" src="images/works/work-1.jpg" alt="">
       <div class="works__content">
@@ -186,7 +195,7 @@
   </div>
 
   <!-- Team -->
-  <div class="team">
+  <div class="team" id="team">
     <div class="container">
       <div class="team__inner">
 
@@ -311,25 +320,45 @@
   </div> <!-- /.team  -->
 
   <!-- TESTIMONIALS  -->
-  <div class="testimonials">
+  <div class="testimonials" id="testimonials">
     <div class="container">
-      <div class="testimonials__item">
-        <div class="testimonials__photo">
-          <img class="testimonials__img" src="images/reviews/review-1.jpg" alt="">
-        </div>
-        <div class="testimonials__content">
-          <div class="testimonials__text">
-            “Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo
-            quam...”
+      <div class="testimonials__slider" id="testimonialsSlider">
+        <div class="slick__item">
+          <div class="testimonials__item">
+            <div class="testimonials__photo">
+              <img class="testimonials__img" src="images/reviews/review-1.jpg" alt="">
+            </div>
+            <div class="testimonials__content">
+              <div class="testimonials__text">
+                “Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo
+                quam...”
+              </div>
+              <div class="testimonials__author">Susan Sims, Interaction Designer at XYZ</div>
+            </div>
           </div>
-          <div class="testimonials__author">Susan Sims, Interaction Designer at XYZ</div>
         </div>
+        <div class="slick__item">
+          <div class="testimonials__item">
+            <div class="testimonials__photo">
+              <img class="testimonials__img" src="images/reviews/review-1.jpg" alt="">
+            </div>
+            <div class="testimonials__content">
+              <div class="testimonials__text">
+                “Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem atque consectetur saepe quasi?
+                Officia...”
+              </div>
+              <div class="testimonials__author">Susan Sims, Interaction Designer at XYZ</div>
+            </div>
+          </div>
+        </div>
+
       </div>
+
     </div> <!-- /.container  -->
   </div> <!-- /.TESTIMONIALS  -->
 
   <!-- download  -->
-  <div class="download">
+  <div class="download" id="download">
     <div class="container">
       <h3 class="download__title">Are You Ready to Start? Download Now For Free!</h3>
       <div class="download__text">
@@ -393,6 +422,12 @@
 
     </div>
   </footer>
+
+
+  <!-- JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="app.js"></script>
+
 </body>
 
 </html>

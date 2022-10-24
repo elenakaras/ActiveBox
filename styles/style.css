@@ -44,6 +44,17 @@ p {
   z-index: 1000;
 }
 
+.header.fixed {
+  height: auto;
+  position: fixed;
+  background-color: #31344e;
+}
+
+.header.fixed .header__inner {
+  padding: 15px 0;
+  border-bottom: 0;
+}
+
 .header__inner {
   display: flex;
   justify-content: space-between;
@@ -56,6 +67,7 @@ p {
 /* Navigation */
 
 .nav {
+  display: flex;
   font-size: 13px;
   font-weight: 700;
 }
@@ -83,8 +95,7 @@ p {
   justify-content: center;
   padding-top: 100px;
   height: 750px;
-  /* background: url("images/intro-bg.jpg") center no-repeat; */
-  background: #31344e url("images/intro-bg.jpg") center no-repeat;
+  background: #31344e url("/images/intro-bg.png") center no-repeat;
   background-size: cover;
 }
 
@@ -339,9 +350,54 @@ p {
   background-color: #53354a;
   overflow: hidden; /* чтобы картинка не выходила за пределы блока */
 }
+
+.testimonials__slider {
+  height: 500px;
+  overflow: hidden;
+}
+
+.testimonials__slider.slick-initialized {
+  height: auto;
+}
+
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0 0 10px;
+  list-style: none;
+  width: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.slick-dots li {
+  margin: 0 5px;
+}
+
+.slick-dots button {
+  background: #fff;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  border: 0;
+  padding: 0;
+  font-size: 0;
+  color: transparent;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.slick-dots .slick-active button {
+  opacity: 1;
+}
+
 .testimonials__item {
   display: flex;
   flex-wrap: wrap;
+  overflow: hidden;
 }
 
 .testimonials__photo {
@@ -517,6 +573,21 @@ p {
 @media (max-width: 991px) {
   .nav {
     display: none;
+    width: 100%;
+    flex-direction: column;
+    text-align: right;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #31344e;
+  }
+
+  .nav.show {
+    display: flex;
+  }
+
+  .nav__link {
+    padding: 9px 15px;
   }
 
   .burger {
